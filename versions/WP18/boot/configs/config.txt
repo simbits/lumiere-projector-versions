@@ -1,0 +1,17 @@
+dtdebug=1
+device_tree=bcm2708-rpi-cm.dtb
+
+dtoverlay=lumiere
+dtparam=i2c0=on
+dtparam=i2c1=on
+dtparam=pd=off
+dtparam=pdo=off
+dtparam=led=on
+
+hdmi_force_hotplug=1
+hdmi_group=2
+hdmi_mode=87
+hdmi_timings=854 0 50 16 40 480 0 30 3 12 0 0 0 60 0 30240000 3
+
+gpu_mem_512=256
+gpu_mem_256=128
