@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# Start splah
+#
+
+LUMIERE_BIN=/opt/lumiere/bin
+LUMIERE_MEDIA=/opt/lumiere/media
+
+start() {
+    # flip horizontally
+    /usr/bin/i2cset -y 1 0x1b 0x0f 0x00 0x00 0x00 0x01 i
+    /usr/bin/i2cset -y 1 0x1b 0x10 0x00 0x00 0x00 0x00 i
+
+    start-stop-daemon -b -S -q --exec /usr/bin/psplash
+    $LUMIERE_BIN/pngview.bin -b 0x0000 $LUMIERE_MEDIA/mask.png &
+    sleep 1
+    echo 1 > /sys/class/leds/projector_led/brightness
+}
+
+stop() {
+	start-stop-daemon -b -S -q --exec /usr/bin/psplash-write QUIT
+}
+
+case "$1" in
+  start)
+	start
+	;;
+  stop)
+	stop
+	;;
+  restart|reload)
+	stop
+	start
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart}"
+	exit 1
+esac
+
+exit $?

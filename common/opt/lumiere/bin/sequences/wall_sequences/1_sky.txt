@@ -1,0 +1,7 @@
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/sky/1/Cloud2.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/rain/1/Rain1.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/sky/1/Cloud3.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/sky/1/StormLightning.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/rain/1/Rain2.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f w -p /opt/lumiere/media/sky/1/ClearSkyBasel.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/sky/1/Cloud1.h264

@@ -1,0 +1,4 @@
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/sky/[bulb]/sky_rain01.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/sky/[bulb]/sky_storm.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/sky/[bulb]/sky_morning.h264
+P /opt/lumiere/bin/play_movie.sh -k -o [shuf1] -r 0 -f b -p /opt/lumiere/media/sky/1/sky_cloud01.h264

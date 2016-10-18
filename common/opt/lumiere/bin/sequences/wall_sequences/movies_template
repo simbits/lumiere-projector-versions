@@ -1,0 +1,6 @@
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/lakes/[bulb]/lake01.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/lakes/[bulb]/lake04.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/lakes/[bulb]/lake03.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/lakes/[bulb]/lake06.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/lakes/[bulb]/lake02.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/lakes/[bulb]/lake05.h264
