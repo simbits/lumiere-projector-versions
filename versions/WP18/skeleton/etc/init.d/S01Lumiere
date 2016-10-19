@@ -8,10 +8,10 @@ LUMIERE_MEDIA=/opt/lumiere/media
 
 start() {
     # flip horizontally
-    /usr/sbin/i2cset -y 1 0x1b 0x0f 0x00 0x00 0x00 0x01 i
-    /usr/sbin/i2cset -y 1 0x1b 0x10 0x00 0x00 0x00 0x00 i
+    #/usr/sbin/i2cset -y 0 0x1b 0x0f 0x00 0x00 0x00 0x01 i
+    #/usr/sbin/i2cset -y 0 0x1b 0x10 0x00 0x00 0x00 0x00 i
 
-    start-stop-daemon -b -S -q --exec /usr/bin/psplash
+    #start-stop-daemon -b -S -q --exec /usr/bin/psplash
     /usr/bin/pngview -b 0x0000 -l 1000 $LUMIERE_MEDIA/mask.png &
     sleep 1
     echo 1 > /sys/class/leds/projector_led/brightness
