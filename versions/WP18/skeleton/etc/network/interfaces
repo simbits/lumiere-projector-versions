@@ -5,5 +5,6 @@ auto eth0
 iface eth0 inet static
     address 192.168.19.1
     netmask 255.255.255.0
-    gateway 192.168.19.254
     broadcast 192.168.19.255
+    up route add -net default netmask 0.0.0.0 gw 192.168.19.254 eth0
+    up route add -net 224.0.0.0 netmask 224.0.0.0 eth0
