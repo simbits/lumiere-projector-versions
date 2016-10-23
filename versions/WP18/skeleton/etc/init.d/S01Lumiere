@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Start splah
 #
@@ -6,13 +6,33 @@
 LUMIERE_BIN=/opt/lumiere/bin
 LUMIERE_MEDIA=/opt/lumiere/media
 
-start() {
-    # flip horizontally
-    #/usr/sbin/i2cset -y 0 0x1b 0x0f 0x00 0x00 0x00 0x01 i
-    #/usr/sbin/i2cset -y 0 0x1b 0x10 0x00 0x00 0x00 0x00 i
+MASTER_PIN=37
+RS485_WE_PIN=39
+RS485_TTY=/dev/ttyS0
+RS485_TTY_OPTS=raw
 
-    #start-stop-daemon -b -S -q --exec /usr/bin/psplash
-    /usr/bin/pngview -b 0x0000 -l 1000 $LUMIERE_MEDIA/mask.png &
+check_master() {
+	gpio -g mode $MASTER_PIN up
+	MASTER=$(gpio -g read $MASTER_PIN)
+	echo $MASTER
+	if [[ $MASTER -eq 0 ]]
+	then
+		echo 1 > /sys/class/leds/stat1/brightness	
+	else
+		echo 0 > /sys/class/leds/stat1/brightness	
+	fi
+}
+
+set_RS485() {
+	gpio -g mode $RS485_WE_PIN out
+	gpio -g write $RS485_WE_PIN 0
+	stty -F $RS485_TTY $RS485_TTY_OPTS
+}
+
+start() {
+    check_master
+    set_RS485
+    /usr/bin/pngview -b 0x0000 -l 1000 $LUMIERE_MEDIA/masks/mask.png &
     sleep 1
     echo 1 > /sys/class/leds/projector_led/brightness
 }
