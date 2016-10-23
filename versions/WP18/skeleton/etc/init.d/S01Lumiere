@@ -32,6 +32,7 @@ set_RS485() {
 start() {
     check_master
     set_RS485
+    /usr/bin/pngview -b 0x0000 -l 1 $LUMIERE_MEDIA/masks/blackbg.png &
     /usr/bin/pngview -b 0x0000 -l 1000 $LUMIERE_MEDIA/masks/mask.png &
     sleep 1
     echo 1 > /sys/class/leds/projector_led/brightness

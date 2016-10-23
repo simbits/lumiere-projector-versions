@@ -1,0 +1,35 @@
+#!/bin/bash
+#
+# Start splah
+#
+
+LUMIERE_BIN=/opt/lumiere/bin
+LUMIERE_MEDIA=/opt/lumiere/media
+
+start() {
+	/opt/lumiere/bin/lumiere.sh
+}
+
+stop() {
+	killall lm_receiver_wp18
+	killall lm_fade.bin
+	killall lm_player.bin
+}
+
+case "$1" in
+  start)
+	start
+	;;
+  stop)
+	stop
+	;;
+  restart|reload)
+	stop
+	start
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart}"
+	exit 1
+esac
+
+exit $?

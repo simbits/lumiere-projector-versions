@@ -27,4 +27,4 @@ i2cset -y 0 0x1b 0x38 0x00 0x00 0x00 0xd3 i
 #	touch /etc/lakes
 #fi
 
-/usr/bin/lm_receiver-simple $SEQUENCE &
+/usr/bin/lm_receiver_wp18 -p $OSCPORT -a $OSCADDR -d $SEQDELAY $SEQUENCE &

@@ -11,7 +11,7 @@
 source /opt/lumiere/bin/vars.inc
 
 OFFSET=0
-LAYER=1
+LAYER=2
 LOOP=1
 ALPHA=255
 PATH=
@@ -91,7 +91,7 @@ if [[ "$KILL" == "y" ]]
 then
     /usr/bin/killall lm_player.bin
 fi
-/usr/bin/lm_player.bin $LOOP $LAYER $ALPHA $OFFSET $PATH &
+/usr/bin/lm_player.bin $LOOP $LAYER $ALPHA $OFFSET $PATH > /dev/null 2>&1 &
 
 if [[ "$FADE" == "b" ]]
 then
