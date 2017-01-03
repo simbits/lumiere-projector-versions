@@ -17,9 +17,9 @@ check_master() {
 	echo $MASTER
 	if [[ $MASTER -eq 0 ]]
 	then
-		echo 1 > /sys/class/leds/stat1/brightness	
+		echo 1 > /sys/class/leds/stat1/brightness
 	else
-		echo 0 > /sys/class/leds/stat1/brightness	
+		echo 0 > /sys/class/leds/stat1/brightness
 	fi
 }
 

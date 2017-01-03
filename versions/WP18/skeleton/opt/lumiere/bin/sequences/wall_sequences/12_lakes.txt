@@ -1,0 +1,6 @@
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/lakes/12/lake_01.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/lakes/12/lake_04.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/lakes/12/lake_03.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/lakes/12/lake_06.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/lakes/12/lake_02.h264
+P /opt/lumiere/bin/play_movie.sh -k -r 0 -f b -p /opt/lumiere/media/lakes/12/lake_05.h264
