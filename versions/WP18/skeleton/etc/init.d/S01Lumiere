@@ -7,6 +7,7 @@ LUMIERE_BIN=/opt/lumiere/bin
 LUMIERE_MEDIA=/opt/lumiere/media
 
 MASTER_PIN=37
+FAN_PIN=43
 RS485_WE_PIN=39
 RS485_TTY=/dev/ttyS0
 RS485_TTY_OPTS=raw
@@ -32,6 +33,8 @@ set_RS485() {
 start() {
     check_master
     set_RS485
+    gpio -g mode $FAN_PIN out
+    gpio -g write $FAN_PIN 1
     /usr/bin/pngview -b 0x0000 -l 1 $LUMIERE_MEDIA/masks/blackbg.png &
     /usr/bin/pngview -b 0x0000 -l 1000 $LUMIERE_MEDIA/masks/mask.png &
     sleep 1
