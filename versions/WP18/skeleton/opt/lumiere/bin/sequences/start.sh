@@ -2,8 +2,8 @@
 
 source /opt/lumiere/bin/vars.inc
 
-LAKE=$LUMIERE_SEQ/wall_sequences/${WALLID}_lakes.txt
-SKY=$LUMIERE_SEQ/wall_sequences/${WALLID}_sky.txt
+#LAKE=$LUMIERE_SEQ/wall_sequences/${WALLID}_lakes.txt
+LAKE=$LUMIERE_SEQ/wall_sequences/${WALLID}_lakes_horiz.txt
 SEQUENCE=$LAKE
 
 # flip horizontally
@@ -18,13 +18,5 @@ i2cset -y 0 0x1b 0x14 0x00 0x00 0x03 0x84 i
 i2cset -y 0 0x1b 0x3a 0x00 0x00 0x00 0x01 i
 i2cset -y 0 0x1b 0x39 0x00 0x00 0x00 0x00 i
 i2cset -y 0 0x1b 0x38 0x00 0x00 0x00 0xd3 i
-
-#if [ -f /etc/lakes ]
-#then
-#	SEQUENCE=$LAKE
-#	rm /etc/lakes
-#else
-#	touch /etc/lakes
-#fi
 
 /usr/bin/lm_receiver_wp18 -p $OSCPORT -a $OSCADDR -d $SEQDELAY $SEQUENCE &
